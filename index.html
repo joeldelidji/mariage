@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,7 +23,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 
 /* --- HERO --- */
 .hero {
-  position: relative; width: 100%; height: 80vh; /* Réduit de 85 à 80 */
+  position: relative; width: 100%; height: 80vh;
   display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
   overflow: hidden;
 }
@@ -70,7 +69,7 @@ h1 {
 }
 
 /* --- SECTIONS --- */
-.wrap { max-width: 700px; margin: 0 auto; padding: 25px 20px; } /* Réduit padding de 40 à 25 */
+.wrap { max-width: 700px; margin: 0 auto; padding: 25px 20px; }
 .section-eye { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--eucalyptus); margin-bottom: 5px; text-align: center; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 6vw, 38px); font-weight: 300; color: var(--dark); margin-bottom: 15px; text-align: center; }
 
@@ -78,14 +77,21 @@ h1 {
 .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--rose-peach), transparent); }
 
 /* --- CARTE PROGRAMME & IMAGE --- */
-.card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; } /* Réduit margin de 30 à 20 */
+.card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; }
 .card-head { 
     background: linear-gradient(135deg, var(--eucalyptus) 0%, var(--sky-blue) 100%); 
     padding: 15px 20px; 
     text-align: center; 
     color: #fff; 
 }
-.card-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; }
+.card-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; margin-bottom: 4px; }
+.card-subtitle { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-style: italic; 
+    font-size: 0.95rem; 
+    letter-spacing: 1px; 
+    opacity: 0.9;
+}
 
 .event { display: grid; grid-template-columns: 70px 2px 1fr; gap: 20px; padding: 15px 20px; border-bottom: 1px solid #f9f4f4; }
 .event:last-child { border-bottom: none; }
@@ -95,13 +101,11 @@ h1 {
 
 .event-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; margin-bottom: 2px; color: var(--dark); }
 .addr { font-size: 13px; color: #707070; line-height: 1.3; }
-.addr strong { color: var(--eucalyptus); }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 500px) {
   .event { grid-template-columns: 60px 2px 1fr; padding: 12px 15px; }
-  h1 { font-size: 2.8rem; }
 }
 </style>
 </head>
@@ -130,7 +134,11 @@ h1 {
   <div class="divider"><div class="line"></div><span>✨</span><div class="line"></div></div>
 
   <div class="card">
-    <div class="card-head"><h2>Samedi 4 Juillet</h2></div>
+    <div class="card-head">
+        <h2>Samedi 4 Juillet</h2>
+        <p class="card-subtitle">Une journée d'amour, de joie & de grâce</p>
+    </div>
+    
     <div class="event">
       <div class="time">14h30</div>
       <div class="line-v"></div>
@@ -139,6 +147,7 @@ h1 {
         <div class="addr"><strong>Mairie de Bagneux</strong><br>92220 Bagneux</div>
       </div>
     </div>
+    
     <div class="event">
       <div class="time">18h00</div>
       <div class="line-v"></div>
@@ -147,6 +156,7 @@ h1 {
         <div class="addr"><strong>4 allée des Garays</strong><br>91120 Palaiseau</div>
       </div>
     </div>
+    
     <div class="event">
       <div class="time">19h00</div>
       <div class="line-v"></div>
