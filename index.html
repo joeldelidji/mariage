@@ -51,17 +51,26 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   animation: fadeUp 1.5s ease-out both;
 }
 
-.pre-title { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--sage-deep); margin-bottom: 10px; }
-.names { font-family: 'Cormorant Garamond', serif; font-size: clamp(50px, 12vw, 85px); font-weight: 300; line-height: 0.9; color: var(--dark); }
-.names em { font-style: italic; color: var(--sage); }
-.amp { display: block; font-size: 30px; color: var(--lilac); font-style: italic; margin: 5px 0; }
-.hero-date {
-  display: inline-block; margin-top: 15px; padding: 8px 25px;
-  border: 1px solid var(--sage); border-radius: 40px;
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--dark);
-  background: rgba(255,255,255,0.3);
+.pre-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 800; /* Gras maximum */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase; /* En majuscules pour plus de lisibilité */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); /* Ombre très forte */
 }
-
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    font-weight: 800; /* Vos noms en très gras */
+    margin: 10px 0;
+    line-height: 1.1;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9); /* Ombre large pour décoller du fond */
+}
 /* --- SECTIONS --- */
 .wrap { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
 .section-eye { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-deep); margin-bottom: 5px; text-align: center; }
