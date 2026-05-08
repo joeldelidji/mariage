@@ -55,22 +55,28 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.2rem;
-    color: #ffffff; /* On garde le blanc mais on va mettre une ombre très forte */
-    font-weight: 600; /* Gras intermédiaire (plus visible que le normal, moins agressif que le 800) */
-    margin-bottom: 10px;
+    color: #89a389; /* La couleur verte de vos boutons */
+    font-weight: 700; /* Bien en gras */
+    margin-bottom: 15px;
     letter-spacing: 2px;
-    /* Ombre noire très opaque pour rendre le blanc visible sur fond clair */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1), 0 0 5px rgba(0,0,0,0.5); 
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    color: #A9D1A9; /* Vert pastel (ajustez ce code si ce n'est pas le bon vert) */
-    font-weight: 700; /* Gras prononcé pour vos noms */
+    font-size: 3.2rem;
+    color: #89a389; /* La même couleur verte */
+    font-weight: 700; /* Bien en gras */
     margin: 10px 0;
-    line-height: 1.2; /* On augmente un peu pour décoller les lignes */
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8); /* Ombre pour le contraste */
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 span.ampersand {
+    font-size: 2.2rem; /* Le & un peu plus petit pour l'élégance */
+    margin: 5px 0;
+    opacity: 0.8;
 }
 /* --- SECTIONS --- */
 .wrap { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
@@ -131,17 +137,19 @@ h1 {
 <body>
 
 <div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-gradient"></div>
-  <div class="hero-content">
-    <p class="pre-title">L'union de deux âmes</p>
-    <div class="names">
-      <em>Grâce</em><br>
-      <span class="amp">&</span>
-      <em>Joel</em>
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+        <p class="pre-title">L'union de deux âmes</p>
+        <div class="names">
+            <h1>
+                <span>Grâce</span>
+                <span class="ampersand">&</span>
+                <span>Joël</span>
+            </h1>
+        </div>
+        <div class="hero-date">04 Juillet 2026</div>
     </div>
-    <div class="hero-date">04 Juillet 2026</div>
-  </div>
 </div>
 
 <div class="wrap">
