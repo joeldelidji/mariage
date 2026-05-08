@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariage Grâce & Joel – 4 Juillet 2026</title>
+<title>Mariage Grâce & Joël – 4 Juillet 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* --- 1. RESET & VARIABLES (Le squelette) --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --sage: #a2a887;
   --sage-deep: #8A8563;
   --cream: #FFFDF9;
-  --dark: #3D3D3D;
+  --dark: #1a1a1a;
   --mid: #707070;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
 
-/* --- ANIMATIONS --- */
+/* --- 2. ANIMATIONS (Pour le dynamisme) --- */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.05); } }
 .reveal { animation: fadeUp 1.2s ease-out both; }
 
-/* --- HERO --- */
+/* --- 3. STYLE HERO (Haut de page) --- */
 .hero {
-  position: relative; width: 100%; height: 90vh;
+  position: relative; width: 100%; height: 85vh;
   display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
   overflow: hidden;
 }
@@ -33,7 +34,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   background-image: url('DSCF3391.JPG');
   background-size: cover; background-position: center 20%;
   z-index: -1;
-  animation: slowZoom 15s infinite alternate ease-in-out;
+  animation: slowZoom 20s infinite alternate ease-in-out;
 }
 .hero-gradient {
   position: absolute; inset: 0;
@@ -56,57 +57,63 @@ h1 {
   font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 10vw, 4.5rem);
   color: var(--sage); font-weight: 700; line-height: 1.1;
   display: flex; flex-direction: column; align-items: center;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
-.ampersand { font-size: 2.2rem; margin: 5px 0; }
+.ampersand { font-size: 0.6em; margin: 5px 0; color: var(--sage); }
 .hero-date {
-  margin-top: 40px; /* Espace entre les noms noirs et la date */
-  font-size: 1.2rem; letter-spacing: 4px; font-weight: 500; color: #000;
+  margin-top: 35px; /* Aération Page 1 */
+  font-size: 1.1rem; letter-spacing: 5px; font-weight: 300; color: #000;
   border-top: 1px solid rgba(162, 168, 135, 0.3);
   display: inline-block; padding-top: 15px;
 }
 
-/* --- SECTIONS --- */
-.wrap { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
-.section-eye { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-deep); text-align: center; margin-bottom: 5px; }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 7vw, 45px); font-weight: 300; text-align: center; margin-bottom: 25px; }
-.divider { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
-.line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--sage), transparent); }
+/* --- 4. STYLE CONTENU (Programme, RSVP) --- */
+.wrap { max-width: 700px; margin: 0 auto; padding: 60px 20px; }
+.section-eye { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-deep); text-align: center; margin-bottom: 10px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; text-align: center; margin-bottom: 30px; }
+.divider { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+.line { flex: 1; height: 1px; background: rgba(162, 168, 135, 0.3); }
 
-/* --- CARTE PROGRAMME --- */
 .card { background: #fff; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
-.card-head { background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%); padding: 25px 20px; text-align: center; color: #fff; }
-.card-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; }
-.sub-description {
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem;
-  color: var(--sage); font-weight: 600; text-align: center; margin: 20px 0;
-}
-.event { display: grid; grid-template-columns: 75px 2px 1fr; gap: 20px; padding: 25px; border-bottom: 1px solid #f0f0f0; }
-.event:last-child { border-bottom: none; }
-.time { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--sage-deep); }
-.line-v { background: #B9D9EB; width: 2px; position: relative; }
-.line-v::after { content: ''; position: absolute; top: 8px; left: -4px; width: 10px; height: 10px; background: var(--sage); border-radius: 50%; }
-.event-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 5px; }
-.addr { font-size: 13px; color: var(--mid); line-height: 1.4; text-decoration: none; display: block; }
-.addr strong { color: var(--dark); text-decoration: underline; text-decoration-color: var(--sage); }
+.card-head { background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%); padding: 30px 20px; text-align: center; color: #fff; }
+.card-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; letter-spacing: 1px; }
+.sub-description { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--sage-deep); text-align: center; margin: 20px 0; }
 
-/* --- IMAGES & RSVP --- */
-.band-img { width: 100%; height: auto; border-radius: 20px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.event { display: grid; grid-template-columns: 80px 2px 1fr; gap: 25px; padding: 30px; border-bottom: 1px solid #f9f9f9; }
+.event:last-child { border-bottom: none; }
+.time { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--sage-deep); }
+.line-v { background: #e0e0e0; position: relative; }
+.line-v::after { content: ''; position: absolute; top: 10px; left: -4px; width: 10px; height: 10px; background: var(--sage); border-radius: 50%; }
+.event-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 5px; color: var(--dark); }
+.addr { font-size: 0.85rem; color: var(--mid); text-decoration: none; display: block; }
+.addr strong { color: var(--dark); border-bottom: 1px solid var(--sage); }
+
+/* --- 5. RSVP & IMAGES FINALES --- */
+.mid-img { width: 100%; height: auto; border-radius: 25px; margin: 50px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .rsvp-box {
-  background: white; border-radius: 25px; padding: 40px 20px; 
-  text-align: center; margin-bottom: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  background: white; border-radius: 25px; padding: 50px 20px;
+  text-align: center; margin: 60px 0; box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
+.couple-img { width: 100%; max-width: 400px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .btn-rsvp {
   display: inline-block; background: var(--sage); color: white;
-  padding: 16px 40px; border-radius: 50px; text-decoration: none;
-  text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 2px;
-  margin-top: 25px; transition: 0.3s ease;
+  padding: 18px 45px; border-radius: 50px; text-decoration: none;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; margin-top: 25px; transition: 0.3s ease;
 }
-.btn-rsvp:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(162,168, 135, 0.4); }
+.btn-rsvp:hover { background: var(--sage-deep); transform: translateY(-3px); }
+
+/* --- 6. FOOTER (Bas de page) --- */
+footer {
+  text-align: center; padding: 60px 20px; background: #f4f1ea;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.1rem; color: #000; font-weight: 800;
+}
 
 @media (max-width: 500px) {
-  .event { grid-template-columns: 65px 2px 1fr; padding: 20px 15px; }
-  h1 { font-size: 3.5rem; }
+  .hero { height: 80vh; }
+  .wrap { padding: 40px 15px; }
+  .event { grid-template-columns: 65px 2px 1fr; padding: 25px 15px; }
+  h1 { font-size: 3.8rem; }
 }
 </style>
 </head>
@@ -118,8 +125,10 @@ h1 {
   <div class="hero-content">
     <p class="pre-title">L'union de deux âmes</p>
     <p class="invitation-text">Nous avons l'honneur de vous inviter à notre mariage</p>
-    <h1><span>Grâce</span><span class="ampersand">&</span><span>Joël</span></h1>
-    <div class="hero-date">04 Juillet 2026</div>
+    <div class="names">
+      <h1><span>Grâce</span><span class="ampersand">&</span><span>Joël</span></h1>
+    </div>
+    <div class="hero-date">04 JUILLET 2026</div>
   </div>
 </div>
 
@@ -129,61 +138,61 @@ h1 {
   <div class="divider"><div class="line"></div><span>🌿</span><div class="line"></div></div>
 
   <div class="card">
-    <div class="card-head"><h2>Samedi 4 Juillet</h2></div>
-    <p class="sub-description">UNE JOURNÉE D'AMOUR, DE JOIE & DE GRÂCE</p>
+    <div class="card-head"><h2>Samedi 04 Juillet 2026</h2></div>
+    <p class="sub-description reveal">UNE JOURNÉE D'AMOUR, DE JOIE & DE GRÂCE</p>
     
-    <div class="event">
+    <div class="event reveal">
       <div class="time">14h30</div><div class="line-v"></div>
       <div>
         <div class="event-name">Cérémonie Civile</div>
-        <a href="https://maps.google.com/?q=Mairie+de+Bagneux" target="_blank" class="addr">
-          <strong>Mairie de Bagneux</strong><br>92220 Bagneux <br>📍 <em>Voir le plan</em>
+        <a href="https://maps.google.com/?q=4+allée+des+Garays+91120+Palaiseau" target="_blank" class="addr">
+          <strong>Mairie de Bagneux</strong><br>92220 Bagneux<br>📍 Voir le plan
         </a>
       </div>
     </div>
 
-    <div class="event">
+    <div class="event reveal">
       <div class="time">18h00</div><div class="line-v"></div>
       <div>
         <div class="event-name">Vin d'Honneur</div>
         <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="addr">
-          <strong>4 allée des Garays</strong><br>91120 Palaiseau <br>📍 <em>Voir le plan</em>
+          <strong>4 allée des Garays</strong><br>91120 Palaiseau<br>📍 Voir le plan
         </a>
       </div>
     </div>
 
-    <div class="event">
+    <div class="event reveal">
       <div class="time">19h00</div><div class="line-v"></div>
       <div>
         <div class="event-name">Réception & Dîner</div>
         <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="addr">
-          <strong>4 allée des Garays</strong><br>91120 Palaiseau <br>📍 <em>Voir le plan</em>
+          <strong>4 allée des Garays</strong><br>91120 Palaiseau<br>📍 Voir le plan
         </a>
       </div>
     </div>
   </div>
 
-  <img src="deco.jpg" alt="Décoration" class="band-img">
+  <img src="deco.jpg" alt="Décoration" class="mid-img reveal">
 
-<img src="deco.jpg" alt="Décoration" class="band-img" style="width: 100%; height: auto; border-radius: 20px; margin: 40px 0;">
-
-  <div class="rsvp-box">
+  <div class="rsvp-box reveal">
     <p class="section-eye">Confirmation</p>
     <h2 class="section-title">RSVP</h2>
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #000; margin-bottom: 20px;">
       Votre présence à nos côtés sera le plus beau des cadeaux.
     </p>
     
-    <div style="margin: 20px 0;">
-        <img src="couple.jpg" alt="Grâce & Joël" style="width: 100%; max-width: 400px; border-radius: 15px; display: block; margin: 0 auto;">
+    <div style="display: flex; justify-content: center;">
+        <img src="couple.jpg" alt="Grâce & Joël" class="couple-img">
     </div>
     
     <p style="margin-top: 15px;">Réponse souhaitée avant le 31 Mai 2026.</p>
-    <a href="mailto:delidjij@gmail.com?subject=Mariage Grace et Joel" class="btn-rsvp">Répondre</a>
+    <a href="mailto:delidjij@gmail.com?subject=Mariage Grace et Joel" class="btn-rsvp">Confirmer ma présence</a>
   </div>
+</div>
 
-<footer style="text-align: center; padding: 50px 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #000; font-weight: 800; background: #f4f1ea;">
-  Grâce & Joël — 4 Juillet 2026 — THÈME PASTEL
+<footer>
+    Grâce & Joël — 04.07.2026<br>
+    <span style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7;">THÈME : PASTEL</span>
 </footer>
 
 </body>
