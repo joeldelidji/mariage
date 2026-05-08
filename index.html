@@ -50,7 +50,15 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
   text-align: center; padding: 0 24px 40px;
   animation: fadeUp 1.5s ease-out both;
 }
-
+.hero-date {
+    margin-top: 40px; /* C'est ici que tu gères l'espace */
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: #000;
+    border-top: 1px solid rgba(162, 168, 135, 0.3); /* Optionnel : petite ligne fine au-dessus */
+    padding-top: 15px;
+}
 .pre-title {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -153,7 +161,6 @@ h1 {
             </h1>
         </div>
         <div class="hero-date">04 Juillet 2026</div>
-      <p class="sub-description">UNE JOURNÉE D'AMOUR, DE JOIE & DE GRÂCE</p>
     </div>
 </div>
 
@@ -162,8 +169,11 @@ h1 {
   <h2 class="section-title">La Journée</h2>
   <div class="divider"><div class="line"></div><span>✨</span><div class="line"></div></div>
 
-  <div class="card">
+ <div class="card">
     <div class="card-head"><h2>Samedi 4 Juillet</h2></div>
+    <p class="sub-description" style="text-align: center; color: #a2a887; margin-top: 10px; font-weight: 500;">
+    UNE JOURNÉE D'AMOUR, DE JOIE & DE GRÂCE
+</p>
 
     <div class="event">
       <div class="time">14h30</div>
@@ -198,18 +208,8 @@ h1 {
       </div>
     </div>
   </div>
-
-  <div class="band"></div>
-
-  <div class="rsvp-box">
-    <p class="section-eye">Confirmation</p>
-    <h2 class="section-title">RSVP</h2>
-    <p>Réponse souhaitée avant le 31 Mai 2026.</p>
-    <a href="mailto:delidjij@gmail.com?subject=Mariage Grace et Joel" class="btn-rsvp">Répondre</a>
-  </div>
-</div>
-<div style="text-align: center; padding: 40px 20px; margin-bottom: 20px;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a2a887; font-weight: 700; max-width: 600px; margin: 0 auto; line-height: 1.4;">
+<div style="text-align: center; padding: 0 20px 40px 20px; margin-top: 0;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a2a887; font-weight: 400; max-width: 600px; margin: 0 auto; line-height: 1.4;">
         Votre présence à nos côtés sera le plus beau des cadeaux.
     </p>
 </div>
