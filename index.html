@@ -140,6 +140,20 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
 }
 .last-image-card img { width: 100%; height: auto; display: block; border-radius: 4px; }
 
+/* Nouveau style pour l'image du Dress Code */
+.dresscode-image-container {
+    max-width: 500px;
+    margin: 20px auto 40px auto;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.dresscode-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 500px) {
@@ -180,7 +194,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <p class="tm-time">14:30</p>
             <h3 class="tm-title">Cérémonie Civile</h3>
             <p class="tm-desc">
-                <a href="https://maps.google.com/?q=Mairie+de+Bagneux+92220" target="_blank" class="address-link">
+                <a href="https://maps.app.goo.gl/9yXpL8W5hJvVw9T99" target="_blank" class="address-link">
                     <strong>Mairie de Bagneux</strong><br>92220 Bagneux
                 </a>
             </p>
@@ -190,7 +204,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <p class="tm-time">18:00</p>
             <h3 class="tm-title">Vin d'Honneur</h3>
             <p class="tm-desc">
-                <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="address-link">
+                <a href="https://maps.app.goo.gl/9yXpL8W5hJvVw9T99" target="_blank" class="address-link">
                     4 allée des Garays, Palaiseau
                 </a>
             </p>
@@ -200,7 +214,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <p class="tm-time">19:30</p>
             <h3 class="tm-title">Dîner & Réception</h3>
             <p class="tm-desc">
-                <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="address-link">
+                <a href="https://maps.app.goo.gl/9yXpL8W5hJvVw9T99" target="_blank" class="address-link">
                     4 allée des Garays, Palaiseau
                 </a>
             </p>
@@ -226,10 +240,14 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
     </div>
 </div>
 
-<div style="text-align: center; margin-bottom: 25px; padding: 0 20px;">
+<div style="text-align: center; margin-bottom: 15px; padding: 0 20px;">
     <p style="font-family: 'Jost', sans-serif; font-weight: 300; letter-spacing: 1px; font-size: 0.95rem; color: var(--text-dark); opacity: 0.85;">
         Votre présence à nos côtés sera le plus beau des cadeaux.
     </p>
+</div>
+
+<div class="dresscode-image-container">
+    <img src="dpastel.jpg" alt="Dress Code Palette Pastel">
 </div>
 
 <footer style="text-align: center; padding: 35px 20px; background-color: var(--lavender); color: var(--text-dark);">
