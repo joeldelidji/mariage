@@ -61,24 +61,9 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
 
 .hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 .invitation-text { letter-spacing: 3px; font-size: 0.65rem; font-weight: 500; margin-top: 5px; margin-bottom: 10px; color: #FFFFFF; }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 5px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 5px; }
 .ampersand { color: var(--soft-gold); font-size: 2.2rem; font-style: italic; }
 .hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--powder-rose); border-top: 1px solid rgba(255,255,255,0.3); display: inline-block; padding-top: 5px; margin-top: 5px; }
-
-/* --- STYLE DU COMPTEUR --- */
-#countdown {
-    margin-top: 15px;
-    font-family: 'Jost', sans-serif;
-    color: var(--white);
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px 15px;
-    display: inline-block;
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-}
 
 /* --- SECTION PROGRAMME --- */
 .wrap { max-width: 800px; margin: 0 auto; padding: 30px 25px; }
@@ -102,8 +87,41 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
 .last-image-card { margin-top: 10px; overflow: hidden; }
 .last-image-card img { width: 100%; height: auto; border-radius: 4px; }
 
-.dresscode-image-container { max-width: 500px; margin: 20px auto 40px auto; padding: 10px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+/* --- DRESS CODE BLOC --- */
+.dresscode-header {
+    font-size: 0.85rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    margin: 30px 0 10px 0;
+}
+
+.dresscode-image-container { 
+    max-width: 500px; 
+    margin: 0 auto 30px auto; 
+    padding: 10px; 
+    background: white; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
 .dresscode-image-container img { width: 100%; height: auto; display: block; }
+
+/* --- STYLE DU COMPTEUR (ADAPTÉ POUR FOND CLAIR) --- */
+#countdown-container {
+    text-align: center;
+    margin: 40px 0;
+}
+#countdown {
+    font-family: 'Jost', sans-serif;
+    color: var(--text-dark);
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 1px solid var(--soft-gold);
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 40px;
+}
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 </style>
@@ -120,9 +138,6 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <h1>Grâce <span class="ampersand">&</span> Joël</h1>
         </div>
         <div class="hero-date">04 . 07 . 2026</div>
-        <br>
-        <div id="countdown">Chargement du décompte...</div>
-        
         <p style="color:white; letter-spacing:3px; margin-top: 15px; font-size: 0.75rem; opacity: 0.9;">BAGNEUX • PALAISEAU</p>
     </div>
 </div>
@@ -185,22 +200,27 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
     </div>
 </div>
 
-<div style="text-align: center; margin-bottom: 15px; padding: 0 20px;">
+<div style="text-align: center; margin-bottom: 10px; padding: 0 20px;">
     <p style="font-family: 'Jost', sans-serif; font-weight: 300; letter-spacing: 1px; font-size: 0.95rem; color: var(--text-dark); opacity: 0.85;">
         Votre présence à nos côtés sera le plus beau des cadeaux.
     </p>
+    
+    <div class="dresscode-header">
+        Dress Code : <span style="color: var(--soft-gold);">Pastel & Chic</span>
+    </div>
 </div>
 
 <div class="dresscode-image-container">
     <img src="dpastel.jpg" alt="Dress Code Palette Pastel">
 </div>
 
+<div id="countdown-container">
+    <div id="countdown">Chargement du décompte...</div>
+</div>
+
 <footer style="text-align: center; padding: 35px 20px; background-color: var(--lavender); color: var(--text-dark);">
     <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
-    <div style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">04 JUILLET 2026</div>
-    <div style="font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; border-top: 1px solid rgba(0,0,0,0.1); display: inline-block; padding-top: 10px;">
-        Dress Code : <span style="color: var(--soft-gold);">Pastel & Chic</span>
-    </div>
+    <div style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;">04 JUILLET 2026</div>
 </footer>
 
 <script>
