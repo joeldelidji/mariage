@@ -20,16 +20,16 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
 
-/* --- HERO (MISE À JOUR : TEXTE DÉCALÉ VERS LE BAS) --- */
+/* --- HERO --- */
 .hero {
   position: relative; 
   width: 100%; 
-  height: 95vh; /* Hauteur augmentée pour mieux cadrer l'image */
+  height: 100vh; /* Prend toute la page */
   display: flex; 
   flex-direction: column; 
   align-items: center; 
-  justify-content: flex-end; /* ALIGNE LE TEXTE VERS LE BAS */
-  padding-bottom: 60px; /* ESPACE PAR RAPPORT AU BORD INFÉRIEUR */
+  justify-content: flex-end; 
+  padding-bottom: 80px; 
   overflow: hidden;
   text-align: center;
 }
@@ -39,92 +39,62 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
     inset: 0;
     background-image: url('DSCF3391.JPG');
     background-size: cover;
-    background-position: center 20%; 
+    background-position: center 15%; /* Remonte l'image pour ne pas couper les têtes en desktop */
     z-index: -1;
 }
 
-/* Gradient ajusté pour assombrir le bas et faire ressortir le texte blanc/rose */
 .hero-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, 
-        rgba(0,0,0,0.1) 0%, 
-        rgba(0,0,0,0.1) 50%, 
-        rgba(0,0,0,0.5) 100%); /* PLUS SOMBRE EN BAS POUR LA LISIBILITÉ */
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
     z-index: 0;
 }
 
+/* FLÈCHE ANIMÉE */
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    z-index: 5;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+    40% {transform: translateX(-50%) translateY(-10px);}
+    60% {transform: translateX(-50%) translateY(-5px);}
+}
+
 .hero-content {
-  position: relative; 
-  z-index: 2;
+  position: relative; z-index: 2;
   padding: 0 20px;
   animation: fadeUp 1.5s ease-out both;
 }
 
-.hero-intro {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: var(--white);
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-invite {
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--white); /* CHANGÉ EN BLANC POUR PLUS DE CLARTÉ SUR FOND SOMBRE */
-    text-transform: uppercase;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 12vw, 4.5rem);
-    color: var(--white);
-    font-weight: 400;
-    line-height: 0.9;
-    margin: 10px 0;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
-}
-
-.ampersand {
-    font-size: 2.2rem;
-    color: var(--soft-gold); 
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    display: block;
-    margin: -5px 0;
-}
-
-.hero-date {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    color: var(--powder-rose); 
-    margin-top: 15px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.hero-loc {
-    margin-top: 10px; 
-    color: var(--white); 
-    letter-spacing: 2px; 
-    font-size: 0.9rem; 
-    opacity: 0.9;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
+.hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--white); text-shadow: 2px 2px 10px rgba(0,0,0,0.4); }
+.ampersand { color: var(--soft-gold); display: block; margin: -5px 0; }
+.hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--powder-rose); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
 
 /* --- SECTIONS --- */
-.wrap { max-width: 700px; margin: 0 auto; padding: 60px 20px; }
+.wrap { 
+    max-width: 700px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    /* Force le programme sur la page suivante en mobile */
+    margin-top: 10vh; 
+}
 
 .section-title { 
     font-family: 'Cormorant Garamond', serif; 
     font-size: 32px; 
     text-align: center; 
     margin-bottom: 30px;
-    color: var(--text-dark);
 }
 
 .card { 
@@ -135,21 +105,23 @@ h1 {
     margin-bottom: 40px; 
 }
 
-.card-head {
-    background: linear-gradient(135deg, var(--lavender) 0%, var(--cream-bg) 100%);
-    padding: 20px;
-    text-align: center;
+/* RÉDUCTION ESPACEMENT DERNIÈRE IMAGE */
+.last-image-card {
+    margin-top: 10px !important; 
+    margin-bottom: 10px !important;
+    padding: 8px !important;
 }
 
 .event { display: grid; grid-template-columns: 80px 2px 1fr; gap: 20px; padding: 25px; border-bottom: 1px solid #f5f5f5; }
-.event:last-child { border-bottom: none; }
 .time { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--soft-gold); font-weight: 600; }
 .line-v { background: var(--lavender); width: 2px; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 500px) {
-  .hero { height: 90vh; padding-bottom: 40px; }
+  .hero { height: 100vh; }
+  /* Sur mobile, on s'assure que le wrap commence après le scroll */
+  .wrap { margin-top: 5vh; } 
   .event { grid-template-columns: 70px 2px 1fr; padding: 15px; }
 }
 </style>
@@ -161,23 +133,19 @@ h1 {
     <div class="hero-gradient"></div>
     <div class="hero-content">
         <p class="hero-intro">L'union de deux âmes</p>
-        <p class="hero-invite">Nous avons l'honneur de vous inviter</p>
         <div class="names">
             <h1>Grâce <span class="ampersand">&</span> Joël</h1>
         </div>
         <div class="hero-date">4 Juillet 2026</div>
-        <p class="hero-loc">Bagneux • Palaiseau</p>
+        <p style="color:white; letter-spacing:2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Bagneux • Palaiseau</p>
     </div>
+    <a href="#programme" class="scroll-arrow">↓</a>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="programme">
   <h2 class="section-title">Le Programme</h2>
 
   <div class="card">
-    <div class="card-head">
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400;">Samedi 4 Juillet</h3>
-    </div>
-    
     <div class="event">
       <div class="time">14h30</div>
       <div class="line-v"></div>
@@ -186,7 +154,6 @@ h1 {
         <div style="font-size: 14px; color: #777;">Mairie de Bagneux</div>
       </div>
     </div>
-    
     <div class="event">
       <div class="time">18h00</div>
       <div class="line-v"></div>
@@ -195,7 +162,6 @@ h1 {
         <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
       </div>
     </div>
-    
     <div class="event">
       <div class="time">19h00</div>
       <div class="line-v"></div>
@@ -206,23 +172,21 @@ h1 {
     </div>
   </div>
 
-  <div style="text-align: center; margin: 50px 0;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--text-dark); line-height: 1.6;">
-        "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre. <br>
-        <span style="color: var(--soft-gold); font-style: normal; font-weight: 500;">Nous avançons ensemble avec Christ notre rocher.</span>"
+  <div style="text-align: center; margin: 30px 0;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem;">
+        "Nous avançons ensemble avec Christ notre rocher."
     </p>
   </div>
 
-  <div class="card" style="padding: 12px;">
-      <img src="image.JPG" alt="Photo Mariage" style="width: 100%; border-radius: 15px; display: block; height: auto;">
+  <div class="card last-image-card">
+      <img src="image.JPG" alt="Photo Mariage" style="width: 100%; border-radius: 15px; display: block;">
   </div>
 
 </div>
 
-<footer style="text-align: center; padding: 50px 20px; background-color: var(--lavender); color: var(--text-dark);">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
-    <div style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">04 Juillet 2026</div>
-    <div style="font-size: 0.8rem; letter-spacing: 1px; opacity: 0.8;">Thème : Pastel & Chic</div>
+<footer style="text-align: center; padding: 40px 20px; background-color: var(--lavender);">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic;">Grâce & Joël</div>
+    <div style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">04 Juillet 2026</div>
 </footer>
 
 </body>
