@@ -20,16 +20,8 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.4; }
 
-.address-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: inline-block;
-}
-.address-link:hover {
-    color: var(--soft-gold);
-    text-decoration: underline;
-}
+.address-link { color: inherit; text-decoration: none; transition: color 0.3s ease; display: inline-block; }
+.address-link:hover { color: var(--soft-gold); text-decoration: underline; }
 
 /* --- HERO --- */
 .hero {
@@ -61,23 +53,6 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
     z-index: 0;
 }
 
-.scroll-arrow {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--white);
-    font-size: 1.8rem;
-    animation: bounce 2s infinite;
-    z-index: 5;
-    text-decoration: none;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-10px);}
-}
-
 .hero-content {
   position: relative; z-index: 2;
   padding: 0 20px;
@@ -85,82 +60,52 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
 }
 
 .hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-.invitation-text { letter-spacing: 3px; font-size: 0.65rem; font-weight: 500; margin-top: 5px; margin-bottom: 10px; }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 5px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
-.ampersand { color: var(--soft-gold); font-size: 2.2rem; display: inline-block; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.invitation-text { letter-spacing: 3px; font-size: 0.65rem; font-weight: 500; margin-top: 5px; margin-bottom: 10px; color: #FFFFFF; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 5px; }
+.ampersand { color: var(--soft-gold); font-size: 2.2rem; font-style: italic; }
 .hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--powder-rose); border-top: 1px solid rgba(255,255,255,0.3); display: inline-block; padding-top: 5px; margin-top: 5px; }
 
-/* --- SECTION PROGRAMME --- */
-.wrap {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px 25px; 
+/* --- STYLE DU COMPTEUR --- */
+#countdown {
+    margin-top: 15px;
+    font-family: 'Jost', sans-serif;
+    color: var(--white);
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
 }
 
+/* --- SECTION PROGRAMME --- */
+.wrap { max-width: 800px; margin: 0 auto; padding: 30px 25px; }
 .section-header { text-align: center; margin-bottom: 20px; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
-.section-subtitle { color: var(--soft-gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; margin-bottom: 5px; }
-.click-info { font-size: 0.75rem; color: #888; letter-spacing: 1px; font-style: italic; }
+.section-subtitle { color: var(--soft-gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; }
+.click-info { font-size: 0.75rem; color: #888; font-style: italic; }
 
 .timeline { position: relative; margin-top: 15px; }
-.timeline-item { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    margin-bottom: 30px; 
-    position: relative; 
-}
-
-.timeline-item::after {
-    content: '';
-    width: 1px;
-    height: 20px;
-    background: var(--lavender);
-    position: absolute;
-    bottom: -25px;
-}
+.timeline-item { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 30px; position: relative; }
+.timeline-item::after { content: ''; width: 1px; height: 20px; background: var(--lavender); position: absolute; bottom: -25px; }
 .timeline-item:last-child::after { display: none; }
 
-.tm-time { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--soft-gold); letter-spacing: 2px; margin-bottom: 2px; }
-.tm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; text-transform: uppercase; margin-bottom: 2px; }
-.tm-desc { font-size: 0.85rem; color: #777; letter-spacing: 1px; max-width: 300px; }
+.tm-time { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--soft-gold); letter-spacing: 2px; }
+.tm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; text-transform: uppercase; }
+.tm-desc { font-size: 0.85rem; color: #777; max-width: 300px; }
 
-/* --- CITATION & IMAGE --- */
 .quote-box { text-align: center; margin: 30px 0; padding: 0 20px; }
-.quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--text-dark); position: relative; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; }
 
-.last-image-card {
-    border-radius: 0;
-    overflow: hidden;
-    margin-top: 10px;
-    padding: 0 !important;
-    background: none;
-    box-shadow: none;
-}
-.last-image-card img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.last-image-card { margin-top: 10px; overflow: hidden; }
+.last-image-card img { width: 100%; height: auto; border-radius: 4px; }
 
-/* Nouveau style pour l'image du Dress Code */
-.dresscode-image-container {
-    max-width: 500px;
-    margin: 20px auto 40px auto;
-    padding: 10px;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.dresscode-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+.dresscode-image-container { max-width: 500px; margin: 20px auto 40px auto; padding: 10px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.dresscode-image-container img { width: 100%; height: auto; display: block; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-@media (max-width: 500px) {
-  .hero { height: 100vh; }
-  .section-title { font-size: 1.8rem; }
-  .tm-title { font-size: 1.3rem; }
-}
 </style>
 </head>
 <body>
@@ -170,16 +115,16 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
     <div class="hero-gradient"></div>
     <div class="hero-content">
         <p class="hero-intro">L'union de deux âmes</p>
-        <p class="invitation-text" style="color: #FFFFFF; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-            NOUS AVONS L'HONNEUR DE VOUS INVITER À NOTRE MARIAGE
-        </p>
+        <p class="invitation-text">NOUS AVONS L'HONNEUR DE VOUS INVITER À NOTRE MARIAGE</p>
         <div class="names">
             <h1>Grâce <span class="ampersand">&</span> Joël</h1>
         </div>
         <div class="hero-date">04 . 07 . 2026</div>
-        <p style="color:white; letter-spacing:3px; margin-top: 10px; font-size: 0.75rem; opacity: 0.9;">BAGNEUX • PALAISEAU</p>
+        <br>
+        <div id="countdown">Chargement du décompte...</div>
+        
+        <p style="color:white; letter-spacing:3px; margin-top: 15px; font-size: 0.75rem; opacity: 0.9;">BAGNEUX • PALAISEAU</p>
     </div>
-    <a href="#programme" class="scroll-arrow">↓</a>
 </div>
 
 <div class="wrap" id="programme">
@@ -194,7 +139,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <p class="tm-time">14:30</p>
             <h3 class="tm-title">Cérémonie Civile</h3>
             <p class="tm-desc">
-                <a href="https://maps.app.goo.gl/9yXpL8W5hJvVw9T99" target="_blank" class="address-link">
+                <a href="https://maps.google.com/?q=Mairie+de+Bagneux" target="_blank" class="address-link">
                     <strong>Mairie de Bagneux</strong><br>92220 Bagneux
                 </a>
             </p>
@@ -204,7 +149,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <p class="tm-time">18:00</p>
             <h3 class="tm-title">Vin d'Honneur</h3>
             <p class="tm-desc">
-                <a href="https://maps.app.goo.gl/9yXpL8W5hJvVw9T99" target="_blank" class="address-link">
+                <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="address-link">
                     4 allée des Garays, Palaiseau
                 </a>
             </p>
@@ -214,7 +159,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
             <p class="tm-time">19:30</p>
             <h3 class="tm-title">Dîner & Réception</h3>
             <p class="tm-desc">
-                <a href="https://maps.app.goo.gl/9yXpL8W5hJvVw9T99" target="_blank" class="address-link">
+                <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="address-link">
                     4 allée des Garays, Palaiseau
                 </a>
             </p>
@@ -257,6 +202,26 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
         Dress Code : <span style="color: var(--soft-gold);">Pastel & Chic</span>
     </div>
 </footer>
+
+<script>
+    function updateCountdown() {
+        const weddingDate = new Date("July 4, 2026 14:30:00").getTime();
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        
+        const countdownElement = document.getElementById("countdown");
+
+        if (diff > 0) {
+            countdownElement.innerHTML = "J - " + days + " jours";
+        } else {
+            countdownElement.innerHTML = "C'est le grand jour !";
+        }
+    }
+
+    updateCountdown();
+</script>
 
 </body>
 </html>
