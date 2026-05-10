@@ -9,12 +9,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --soft-gold:   #C5A367;
-  --powder-rose: #E8C5C5;
-  --lavender:    #D6D1F0;
-  --cream-bg:    #F9F6F1;
-  --text-dark:   #423E3B;
-  --white:       #FFFFFF;
+  --soft-gold:   #C5A367;
+  --powder-rose: #E8C5C5;
+  --lavender:    #D6D1F0;
+  --cream-bg:    #F9F6F1;
+  --text-dark:   #423E3B;
+  --white:       #FFFFFF;
 }
 
 html { scroll-behavior: smooth; }
@@ -22,372 +22,189 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
 
 /* --- HERO --- */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Prend toute la page */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 80px;
-  overflow: hidden;
-  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 80px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('DSCF3391.JPG');
-    background-size: cover;
-    background-position: center 15%; /* Remonte l'image pour ne pas couper les têtes en desktop */
-    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background-image: url('DSCF3391.JPG');
+    background-size: cover;
+    background-position: center 15%;
+    z-index: -1;
 }
 
 .hero-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
-    z-index: 0;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.7) 100%);
+    z-index: 0;
 }
 
-/* FLÈCHE ANIMÉE */
 .scroll-arrow {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--white);
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-    z-index: 5;
-    cursor: pointer;
-    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    z-index: 5;
+    text-decoration: none;
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-10px);}
-    60% {transform: translateX(-50%) translateY(-5px);}
+    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+    40% {transform: translateX(-50%) translateY(-10px);}
 }
 
 .hero-content {
-  position: relative; z-index: 2;
-  padding: 0 20px;
-  animation: fadeUp 1.5s ease-out both;
+  position: relative; z-index: 2;
+  padding: 0 20px;
+  animation: fadeUp 1.5s ease-out both;
 }
 
 .hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--white); text-shadow: 2px 2px 10px rgba(0,0,0,0.4); }
-.ampersand { color: var(--soft-gold); display: block; margin: -5px 0; }
-.hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--powder-rose); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+.invitation-text { letter-spacing: 3px; font-size: 0.7rem; font-weight: 500; margin-top: 10px; margin-bottom: 20px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+.ampersand { color: var(--soft-gold); font-size: 2.5rem; display: inline-block; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--powder-rose); border-top: 1px solid rgba(255,255,255,0.3); display: inline-block; padding-top: 10px; margin-top: 10px; }
 
-/* --- SECTIONS --- */
+/* --- SECTION PROGRAMME (Inspiration Canva) --- */
 .wrap {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-    /* Force le programme sur la page suivante en mobile */
-    margin-top: 10vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 25px;
 }
 
-.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 30px;
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+.section-subtitle { color: var(--soft-gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; }
+
+.timeline { position: relative; margin-top: 40px; }
+.timeline-item { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    position: relative; 
 }
 
-.card {
-    background: var(--white);
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(214, 209, 240, 0.4);
-    margin-bottom: 40px;
+.timeline-item::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: var(--lavender);
+    position: absolute;
+    bottom: -45px;
 }
+.timeline-item:last-child::after { display: none; }
 
-/* RÉDUCTION ESPACEMENT DERNIÈRE IMAGE */
+.tm-time { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--soft-gold); letter-spacing: 2px; margin-bottom: 5px; }
+.tm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; text-transform: uppercase; margin-bottom: 5px; }
+.tm-desc { font-size: 0.9rem; color: #777; letter-spacing: 1px; max-width: 300px; }
+
+/* --- CITATION & IMAGE --- */
+.quote-box { text-align: center; margin: 80px 0; padding: 0 20px; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--text-dark); position: relative; }
+
 .last-image-card {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    padding: 8px !important;
+    border-radius: 0; /* Style plus "photo d'art" */
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 0 !important;
+    background: none;
+    box-shadow: none;
 }
-
-.event { display: grid; grid-template-columns: 80px 2px 1fr; gap: 20px; padding: 25px; border-bottom: 1px solid #f5f5f5; }
-.time { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--soft-gold); font-weight: 600; }
-.line-v { background: var(--lavender); width: 2px; }
+.last-image-card img { width: 100%; height: auto; display: block; border-radius: 4px; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 500px) {
-  .hero { height: 100vh; }
-  /* Sur mobile, on s'assure que le wrap commence après le scroll */
-  .wrap { margin-top: 5vh; }
-  .event { grid-template-columns: 70px 2px 1fr; padding: 15px; }
+  .hero { height: 100vh; }
+  .section-title { font-size: 2rem; }
+  .tm-title { font-size: 1.5rem; }
 }
 </style>
 </head>
 <body>
 
 <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-gradient"></div>
-    <div class="hero-content">
-        <p class="hero-intro">L'union de deux âmes</p>
-     <p class="invitation-text" style="color: #FFFFFF; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-    NOUS AVONS L'HONNEUR DE VOUS INVITER À NOTRE MARIAGE
-</p>
-        <div class="names">
-            <h1>Grâce <span class="ampersand">&</span> Joël</h1>
-        </div>
-        <div class="hero-date">4 Juillet 2026</div>
-        <p style="color:white; letter-spacing:2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Bagneux • Palaiseau</p>
-    </div>
-    <a href="#programme" class="scroll-arrow">↓</a>
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+        <p class="hero-intro">L'union de deux âmes</p>
+        <p class="invitation-text" style="color: #FFFFFF; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+            NOUS AVONS L'HONNEUR DE VOUS INVITER À NOTRE MARIAGE
+        </p>
+        <div class="names">
+            <h1>Grâce <span class="ampersand">&</span> Joël</h1>
+        </div>
+        <div class="hero-date">04 . 07 . 2026</div>
+        <p style="color:white; letter-spacing:3px; margin-top: 15px; font-size: 0.8rem; opacity: 0.9;">BAGNEUX • PALAISEAU</p>
+    </div>
+    <a href="#programme" class="scroll-arrow">↓</a>
 </div>
 
 <div class="wrap" id="programme">
-  <h2 class="section-title">Notre Programme</h2>
+    <div class="section-header">
+        <h2 class="section-title">Notre Programme</h2>
+        <p class="section-subtitle">Le déroulement de cette belle journée</p>
+    </div>
 
-  <div class="card">
-    <div class="event">
-      <div class="time">14h30</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Cérémonie Civile</div>
-        <div style="font-size: 14px; color: #777;">Mairie de Bagneux</div>
-      </div>
-    </div>
-    <div class="event">
-      <div class="time">18h00</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Vin d'Honneur</div>
-        <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
-      </div>
-    </div>
-    <div class="event">
-      <div class="time">19h00</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Dîner & Réception</div>
-        <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
-      </div>
-    </div>
-  </div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <p class="tm-time">14:30</p>
+            <h3 class="tm-title">Cérémonie Civile</h3>
+            <p class="tm-desc">Mairie de Bagneux</p>
+        </div>
 
- <div style="text-align: center; margin: 50px 0;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--text-dark); line-height: 1.6;">
-        "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre. <br>
-        <span style="color: var(--soft-gold); font-style: normal; font-weight: 500;">Nous avançons ensemble avec Christ notre rocher.</span>"
-    </p>
-  </div>
+        <div class="timeline-item">
+            <p class="tm-time">18:00</p>
+            <h3 class="tm-title">Vin d'Honneur</h3>
+            <p class="tm-desc">4 allée des Garays, Palaiseau</p>
+        </div>
 
-  <div class="card last-image-card">
-      <img src="image.JPG" alt="Photo Mariage" style="width: 100%; border-radius: 15px; display: block;">
-  </div>
+        <div class="timeline-item">
+            <p class="tm-time">19:30</p>
+            <h3 class="tm-title">Dîner & Réception</h3>
+            <p class="tm-desc">Célébration et partage</p>
+        </div>
 
+        <div class="timeline-item">
+            <p class="tm-time">04:00</p>
+            <h3 class="tm-title">Fin de soirée</h3>
+            <p class="tm-desc">Clôture des festivités</p>
+        </div>
+    </div>
+
+    <div class="quote-box">
+        <p class="quote-text">
+            "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre."
+            <br>
+            <span style="color: var(--soft-gold); font-size: 1.1rem; font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Christ notre rocher</span>
+        </p>
+    </div>
+
+    <div class="last-image-card">
+        <img src="image.JPG" alt="Grâce et Joël">
+    </div>
 </div>
 
-<footer style="text-align: center; padding: 50px 20px; background-color: var(--lavender); color: var(--text-dark);">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
-    <div style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">04 Juillet 2026</div>
-    <div style="font-size: 0.8rem; letter-spacing: 1px; opacity: 0.8;">Thème : Pastel & Chic</div>
-</footer>
-
-</body>
-</html>
-Le dim. 10 mai 2026 à 19:40, Joël Delidji <delidjij@gmail.com> a écrit :
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariage Grâce & Joel – 4 Juillet 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --soft-gold:   #C5A367; 
-  --powder-rose: #E8C5C5; 
-  --lavender:    #D6D1F0; 
-  --cream-bg:    #F9F6F1;
-  --text-dark:   #423E3B;
-  --white:       #FFFFFF;
-}
-
-html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
-
-/* --- HERO --- */
-.hero {
-  position: relative; 
-  width: 100%; 
-  height: 100vh; /* Prend toute la page */
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: flex-end; 
-  padding-bottom: 80px; 
-  overflow: hidden;
-  text-align: center;
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('DSCF3391.JPG');
-    background-size: cover;
-    background-position: center 15%; /* Remonte l'image pour ne pas couper les têtes en desktop */
-    z-index: -1;
-}
-
-.hero-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
-    z-index: 0;
-}
-
-/* FLÈCHE ANIMÉE */
-.scroll-arrow {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--white);
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-    z-index: 5;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-10px);}
-    60% {transform: translateX(-50%) translateY(-5px);}
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  padding: 0 20px;
-  animation: fadeUp 1.5s ease-out both;
-}
-
-.hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5rem); color: var(--white); text-shadow: 2px 2px 10px rgba(0,0,0,0.4); }
-.ampersand { color: var(--soft-gold); display: block; margin: -5px 0; }
-.hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--powder-rose); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-
-/* --- SECTIONS --- */
-.wrap { 
-    max-width: 700px; 
-    margin: 0 auto; 
-    padding: 20px; 
-    /* Force le programme sur la page suivante en mobile */
-    margin-top: 10vh; 
-}
-
-.section-title { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 32px; 
-    text-align: center; 
-    margin-bottom: 30px;
-}
-
-.card { 
-    background: var(--white); 
-    border-radius: 25px; 
-    overflow: hidden; 
-    box-shadow: 0 15px 40px rgba(214, 209, 240, 0.4); 
-    margin-bottom: 40px; 
-}
-
-/* RÉDUCTION ESPACEMENT DERNIÈRE IMAGE */
-.last-image-card {
-    margin-top: 10px !important; 
-    margin-bottom: 10px !important;
-    padding: 8px !important;
-}
-
-.event { display: grid; grid-template-columns: 80px 2px 1fr; gap: 20px; padding: 25px; border-bottom: 1px solid #f5f5f5; }
-.time { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--soft-gold); font-weight: 600; }
-.line-v { background: var(--lavender); width: 2px; }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-@media (max-width: 500px) {
-  .hero { height: 100vh; }
-  /* Sur mobile, on s'assure que le wrap commence après le scroll */
-  .wrap { margin-top: 5vh; } 
-  .event { grid-template-columns: 70px 2px 1fr; padding: 15px; }
-}
-</style>
-</head>
-<body>
-
-<div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-gradient"></div>
-    <div class="hero-content">
-        <p class="hero-intro">L'union de deux âmes</p>
-        <div class="names">
-            <h1>Grâce <span class="ampersand">&</span> Joël</h1>
-        </div>
-        <div class="hero-date">4 Juillet 2026</div>
-        <p style="color:white; letter-spacing:2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Bagneux • Palaiseau</p>
-    </div>
-    <a href="#programme" class="scroll-arrow">↓</a>
-</div>
-
-<div class="wrap" id="programme">
-  <h2 class="section-title">Notre Programme</h2>
-
-  <div class="card">
-    <div class="event">
-      <div class="time">14h30</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Cérémonie Civile</div>
-        <div style="font-size: 14px; color: #777;">Mairie de Bagneux</div>
-      </div>
-    </div>
-    <div class="event">
-      <div class="time">18h00</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Vin d'Honneur</div>
-        <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
-      </div>
-    </div>
-    <div class="event">
-      <div class="time">19h00</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Dîner & Réception</div>
-        <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
-      </div>
-    </div>
-  </div>
-
- <div style="text-align: center; margin: 50px 0;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--text-dark); line-height: 1.6;">
-        "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre. <br>
-        <span style="color: var(--soft-gold); font-style: normal; font-weight: 500;">Nous avançons ensemble avec Christ notre rocher.</span>"
-    </p>
-  </div>
-
-  <div class="card last-image-card">
-      <img src="image.JPG" alt="Photo Mariage" style="width: 100%; border-radius: 15px; display: block;">
-  </div>
-
-</div>
-
-<footer style="text-align: center; padding: 50px 20px; background-color: var(--lavender); color: var(--text-dark);">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
-    <div style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">04 Juillet 2026</div>
-    <div style="font-size: 0.8rem; letter-spacing: 1px; opacity: 0.8;">Thème : Pastel & Chic</div>
+<footer style="text-align: center; padding: 60px 20px; background-color: var(--lavender); color: var(--text-dark);">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
+    <div style="font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">04 JUILLET 2026</div>
+    <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.6; text-transform: uppercase;">Dress Code : Pastel & Chic</div>
 </footer>
 
 </body>
