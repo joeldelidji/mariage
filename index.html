@@ -20,6 +20,18 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.4; }
 
+/* Styles pour les liens d'adresses */
+.address-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+.address-link:hover {
+    color: var(--soft-gold);
+    text-decoration: underline;
+}
+
 /* --- HERO --- */
 .hero {
   position: relative;
@@ -29,7 +41,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 60px; /* Réduit */
+  padding-bottom: 50px; 
   overflow: hidden;
   text-align: center;
 }
@@ -83,30 +95,30 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
 .wrap {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px 25px; /* Réduit de 60px à 40px */
+    padding: 30px 25px; 
 }
 
-.section-header { text-align: center; margin-bottom: 30px; } /* Réduit de 60px à 30px */
+.section-header { text-align: center; margin-bottom: 25px; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
 .section-subtitle { color: var(--soft-gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; }
 
-.timeline { position: relative; margin-top: 20px; }
+.timeline { position: relative; margin-top: 15px; }
 .timeline-item { 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    margin-bottom: 35px; /* Réduit de 50px à 35px */
+    margin-bottom: 30px; 
     position: relative; 
 }
 
 .timeline-item::after {
     content: '';
     width: 1px;
-    height: 25px; /* Réduit */
+    height: 20px;
     background: var(--lavender);
     position: absolute;
-    bottom: -30px;
+    bottom: -25px;
 }
 .timeline-item:last-child::after { display: none; }
 
@@ -115,13 +127,13 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
 .tm-desc { font-size: 0.85rem; color: #777; letter-spacing: 1px; max-width: 300px; }
 
 /* --- CITATION & IMAGE --- */
-.quote-box { text-align: center; margin: 40px 0; padding: 0 20px; } /* Réduit de 80px à 40px */
+.quote-box { text-align: center; margin: 30px 0; padding: 0 20px; }
 .quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--text-dark); position: relative; }
 
 .last-image-card {
     border-radius: 0;
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 0 !important;
     background: none;
     box-shadow: none;
@@ -134,7 +146,6 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
   .hero { height: 100vh; }
   .section-title { font-size: 1.8rem; }
   .tm-title { font-size: 1.3rem; }
-  .wrap { padding: 30px 20px; }
 }
 </style>
 </head>
@@ -167,19 +178,31 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
         <div class="timeline-item">
             <p class="tm-time">14:30</p>
             <h3 class="tm-title">Cérémonie Civile</h3>
-            <p class="tm-desc">Mairie de Bagneux</p>
+            <p class="tm-desc">
+                <a href="https://maps.google.com/?q=Mairie+de+Bagneux+92220" target="_blank" class="address-link">
+                    <strong>Mairie de Bagneux</strong><br>92220 Bagneux
+                </a>
+            </p>
         </div>
 
         <div class="timeline-item">
             <p class="tm-time">18:00</p>
             <h3 class="tm-title">Vin d'Honneur</h3>
-            <p class="tm-desc">4 allée des Garays, Palaiseau</p>
+            <p class="tm-desc">
+                <a href="https://maps.google.com/?q=4+allée+des+Garays+Palaiseau" target="_blank" class="address-link">
+                    4 allée des Garays, Palaiseau
+                </a>
+            </p>
         </div>
 
         <div class="timeline-item">
             <p class="tm-time">19:30</p>
             <h3 class="tm-title">Dîner & Réception</h3>
-            <p class="tm-desc">Célébration et partage</p>
+            <p class="tm-desc">
+                <a href="https://maps.google.com/?q=4+allée+des+Garays+Palaiseau" target="_blank" class="address-link">
+                    4 allée des Garays, Palaiseau
+                </a>
+            </p>
         </div>
 
         <div class="timeline-item">
@@ -202,13 +225,13 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 4.5r
     </div>
 </div>
 
-<div style="text-align: center; margin-bottom: 30px; padding: 0 20px;">
+<div style="text-align: center; margin-bottom: 25px; padding: 0 20px;">
     <p style="font-family: 'Jost', sans-serif; font-weight: 300; letter-spacing: 1px; font-size: 0.95rem; color: var(--text-dark); opacity: 0.85;">
         Votre présence à nos côtés sera le plus beau des cadeaux.
     </p>
 </div>
 
-<footer style="text-align: center; padding: 40px 20px; background-color: var(--lavender); color: var(--text-dark);">
+<footer style="text-align: center; padding: 30px 20px; background-color: var(--lavender); color: var(--text-dark);">
     <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
     <div style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;">04 JUILLET 2026</div>
     <div style="font-size: 0.65rem; letter-spacing: 1px; opacity: 0.6; text-transform: uppercase;">Dress Code : Pastel & Chic</div>
